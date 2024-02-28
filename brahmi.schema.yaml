@@ -1,0 +1,81 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: brahmi
+  name: "𑀩𑁆𑀭𑀳𑁆𑀫𑀺"
+  version: "brahmi0.1"
+  author:
+    - brahmi
+  description: |
+    按轉寫輸入梵文。常用附加符.和;。
+
+switches:
+  - name: full_shape
+    reset: 0
+#    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    reset: 1
+#    states: [ 句讀, 符號 ]
+  - name: ascii_mode
+    reset: 0
+    states: [ 𑀩𑁆𑀭𑀳𑁆𑀫𑀺, En ]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer  #
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+#    - script_translator
+  filters:
+    - uniquifier           # ※ 過濾重複的候選字
+
+menu:
+  alternative_select_keys: "ABCDEFGHIJ"
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz.,;''`-0123456789\/'
+  delimiter: ' '
+  algebra:
+    - derive/-/q/
+    - derive/../w/
+  auto_select: true  # 顶字上屏  
+  auto_select_unique_candidate: true # 无重码自动上屏  
+
+editor:
+  bindings:
+    Return: commit_script_text   #上屏變換後輸入
+
+translator:
+  dictionary: brahmi
+  preedit_format:
+    - xlit|fq|a-|
+    - xform/w/../
+  enable_user_dict: false
+  enable_sentence: false  #爲了顯示.[tdns]，此句不能用。
+#  enable_sentence: true
+  enable_completion: true
+  sentence_over_completion: true
+#punctuator:
+#  import_preset: alternative
+
+key_binder:
+  bindings:
+    - { when: has_menu, accept: space, send: space }
+    - { when: composing, accept: space, send: Escape }
+    - { when: always, accept: comma, send: comma }   #comma，period。
+    - { when: always, accept: period, send: period }
+    - { when: always, accept: semicolon, send: semicolon } #分號
+    - { when: always, accept: apostrophe, send: apostrophe } #引號
+  import_preset: default
