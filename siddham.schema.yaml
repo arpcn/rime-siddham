@@ -1,0 +1,126 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: siddham
+  name: "siddham"
+  version: "siddham0.1"
+  author:
+    - siddham
+  description: |
+    按轉寫輸入梵文。常用附加符.和;。字體可以用Brahmavidyā Siddham/noto sans siddham。MuktamSiddham用天城碼位，可直轉。暫用字符：𑗈𑗆𑗇
+
+
+switches:
+  - name: full_shape
+    reset: 0
+#    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    reset: 1
+#    states: [ 句讀, 符號 ]
+  - name: ascii_mode
+    reset: 0
+    states: [ 𑖭𑖰𑖟𑖿𑖠𑖦𑖿, En ]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer  #
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+#    - script_translator
+  filters:
+    - uniquifier           # ※ 過濾重複的候選字
+
+style:
+  font_face: "Brahmavidyā Siddham"     # 字體名稱 "noto sans siddham"  
+  font_point: 15      # 字號
+  label_format: "%s."    #序号规则 #可以去掉數字後面的點 "%s" 
+
+#menu:
+#  alternative_select_keys: "ABCDEFGHIJ"
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz.,;''`-\/'
+  delimiter: ' '
+  algebra:
+    - derive/-/q/
+    - derive/../w/
+  auto_select: false  # 顶字上屏  true 
+  auto_select_unique_candidate: true # 无重码自动上屏  
+
+editor:
+  bindings:
+    Return: commit_script_text   #上屏變換後輸入
+
+translator:
+  dictionary: siddham
+  preedit_format:
+    - xlit|fq|a-|
+    - xform/w/../
+    - xform/\.g/ṅ/
+    - xform/\.j/ñ/
+    - xform/z/ś/
+    - xform/\.t/ṭ/
+    - xform/\.d/ḍ/
+    - xform/\.n/ṇ/
+    - xform/\.s/ṣ/
+    - xform/\.m/ṃ/
+    - xform/\.h/ḥ/
+    - xform/\.l/ḷ/
+    - xform/\.\.l/ḹ/
+    - xform/\.r/ṛ/
+    - xform/\.\.r/ṝ/
+    - xform/-l/ḻ/
+    - xform/\.a/ā/
+    - xform/\.e/ē/
+    - xform/\.i/ī/
+    - xform/\.o/ō/
+    - xform/\.u/ū/
+  comment_format:
+    - xform/\.g/ṅ/
+    - xform/\.j/ñ/
+    - xform/z/ś/
+    - xform/\.t/ṭ/
+    - xform/\.d/ḍ/
+    - xform/\.n/ṇ/
+    - xform/\.s/ṣ/
+    - xform/\.m/ṃ/
+    - xform/\.h/ḥ/
+    - xform/\.l/ḷ/
+    - xform/\.\.l/ḹ/
+    - xform/\.r/ṛ/
+    - xform/\.\.r/ṝ/
+    - xform/-l/ḻ/
+    - xform/\.a/ā/
+    - xform/\.e/ē/
+    - xform/\.i/ī/
+    - xform/\.o/ō/
+    - xform/\.u/ū/
+  enable_user_dict: false
+  enable_sentence: true  #爲了顯示.[tdns]，此句不能用。 false 
+#  enable_sentence: true
+  enable_completion: true
+#  sentence_over_completion: true
+#punctuator:
+#  import_preset: alternative
+
+key_binder:
+  bindings:
+    - { when: has_menu, accept: space, send: space }
+    - { when: composing, accept: space, send: Escape }
+    - { when: always, accept: comma, send: comma }   #comma，period。
+    - { when: always, accept: period, send: period }
+    - { when: always, accept: semicolon, send: semicolon } #分號
+    - { when: always, accept: apostrophe, send: apostrophe } #引號
+  import_preset: default
