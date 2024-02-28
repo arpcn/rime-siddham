@@ -1,3 +1,7 @@
+# **Rime小狼毫輸入法安裝與使用**
+
+https://docs.qq.com/doc/DQW1nbmZZTEFNQVNx
+
 # **rime梵藏輸入方案**
 
 這一套輸入方案中，IAST、天城、悉曇、婆羅米、藏文，都是**一樣的編碼方式**。
@@ -18,7 +22,7 @@ https://github.com/arpcn/rime-siddham
 
 https://github.com/arpcn/rime-tibetan
 
-# **鍵盤分布**：
+# **鍵盤分布**
 
 ![鍵盤](https://github.com/arpcn/rime-devanagari/blob/master/鍵盤.png)
 
