@@ -4,19 +4,19 @@ https://docs.qq.com/doc/DQW1nbmZZTEFNQVNx
 
 # **rime梵藏輸入方案**
 
-**天城體** devanagari
+- **天城體** devanagari
 
 https://github.com/arpcn/rime-devanagari/
 
-**IAST**
+- **IAST**
 
 https://github.com/arpcn/rime-iast
 
-**悉曇體**及**婆羅米** Siddham & Brahmi
+- **悉曇體**及**婆羅米** Siddham & Brahmi
 
 https://github.com/arpcn/rime-siddham
 
-**藏文**
+- **藏文**
 
 https://github.com/arpcn/rime-tibetan
 
