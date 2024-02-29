@@ -26,7 +26,7 @@ https://github.com/arpcn/rime-tibetan
 
 <details>
 
-<summary>查看 ☞ <b>表格文本</b> ☜ 點擊 ◂ </summary>
+<summary>查看 ☞ <b><i>表格文本</i></b> ☜ 點擊 ◂ </summary>
 
 |क्|k|त्|t|श्|z|अ|a|||़|;\ |क़्|;k|ऍ|.e|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
