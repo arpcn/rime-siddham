@@ -24,6 +24,10 @@ https://github.com/arpcn/rime-tibetan
 
 這一套輸入方案中，IAST、天城、悉曇、婆羅米、藏文，都是[**一樣的編碼方式**](#)。
 
+<details>
+
+<summary>查看表格文本 <b>點擊◂</b> </summary>
+
 |क्|k|त्|t|श्|z|अ|a|||़|;\ |क़्|;k|ऍ|.e|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 |ख्|kh|थ्|th|ष्|.s|आ|.a|ा|;.a|॒|-\ |ख़्|;kh|ऑ|.o|
@@ -41,6 +45,8 @@ https://github.com/arpcn/rime-tibetan
 |ढ्|.dh|ल्|l|||औ|au|ौ|;au|७|7|ॼ्|-j|||
 |ण्|.n|व्|v|||ॐ|;om|||८|8|ॾ्|-.d|||
 |||||||||||९|9|ॿ्|-b|||
+
+</details>
 
 ![鍵盤](https://github.com/arpcn/rime-devanagari/blob/master/鍵盤.png)
 
