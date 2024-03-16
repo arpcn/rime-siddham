@@ -43,7 +43,7 @@ engine:
     - uniquifier           # ※ 過濾重複的候選字
 
 style:
-  font_face: "Brahmavidyā Siddham, Brahmavidyā Siddham Kalama, Brahmavidyā Siddham Kalama Normal"     # 字體名稱 "noto sans siddham"  TH-Tshyn-P2SunmanPUA"
+  font_face: "Brahmavidyā Siddham"     # 字體名稱 "noto sans siddham"  "Brahmavidyā Siddham, Brahmavidyā Siddham Kalama, Brahmavidyā Siddham Kalama Normal"
   font_point: 15      # 字號
   label_format: "%s."    #序号规则 #可以去掉數字後面的點 "%s" 
 
